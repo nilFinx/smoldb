@@ -265,7 +265,7 @@ function smoldb:set(key, value)
 end
 
 --- Return the key's value or set it to the default value if provided and return it
----@param key any the key to return
+---@param key string the key to return
 ---@param default any default value if key does not exist
 function smoldb:ensure(key, default)
   if type(key) ~= "string" then return self:__error("key must be a string") end
@@ -290,7 +290,7 @@ function smoldb:ensure(key, default)
 end
 
 --- return whether or not the key exists
----@param key any
+---@param key string
 function smoldb:has(key)
   if type(key) ~= "string" then return self:__error("key must be a string") end
   
